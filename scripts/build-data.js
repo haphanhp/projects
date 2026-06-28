@@ -12,7 +12,9 @@ import { execSync } from "node:child_process";
 import path from "node:path";
 import matter from "gray-matter";
 
-const ROOT = path.resolve(import.meta.dirname, "..");
+import { fileURLToPath } from "node:url";
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const ROOT = path.resolve(__dirname, "..");
 const PROJECTS_DIR = path.join(ROOT, "projects");
 const ACTIONS_DIR = path.join(ROOT, "actions");
 const OUT_DIR = path.join(ROOT, "public");
